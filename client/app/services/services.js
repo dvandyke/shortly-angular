@@ -1,6 +1,6 @@
 angular.module('shortly.services', [])
 
-.factory('Links', function ($http) {
+.factory('Links', function ($http, $location) {
   // Your code here
   // var lanks = function(){
   //   return $http.get('/api/links').success(function(data, status, headers, config){
@@ -25,17 +25,22 @@ angular.module('shortly.services', [])
   var postLink = function (link) {
     return $http({
       method: 'POST',
-      url: '/api/links',
+      url: '/api/links/',
       data: link
     }).then(function (resp) {
-      console.log("link ", resp.data.link);
-      return resp.data.link;
+      console.log("link ", resp.data);
+      return resp.data;
     })
   };
 
+  var linksRedirect = function () {
+    $location.path('/links');
+  }
+
   return {
     getLinks: getLinks,
-    postLink: postLink
+    postLink: postLink,
+    linksRedirect: linksRedirect
   };
 })
 

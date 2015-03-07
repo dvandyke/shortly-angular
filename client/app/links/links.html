@@ -1,4 +1,13 @@
 <div id='container' ng-controller = 'LinksController' >
   <!-- Your html here -->
   HUBBA DUBBA
+  <div ng-repeat='n in data.links'>
+    <img src='../assets/redirect_icon.png'/>
+    <div class='info'>
+      <div class='visits'><span class='count'>{{n.visits}}</span> Visits</div>
+      <div class='title'>{{n.title}}</div>
+      <div class='original'>{{n.url}}</div>
+      <a href='{{base_url}}/{{code}}'>{{n.base_url}}/{{n.code}}</a>
+    </div>
+  </div>
 </div>

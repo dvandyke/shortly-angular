@@ -1,6 +1,11 @@
-<div id='container'>
-<!-- Your code here -->
-
+<div id='container' ng-controller='ShortenController'>
+<!-- Your cºde here -->
+<form>
+  <input class='text' type='text' ng-model='$scope.link.url' name='url' placeholder='Type link to shorten here '>
+  <input type='submit' ng-click='addLink($scope.link.url)' value='Shorten'>
+</form>
+  <!-- <img class='spinner' src='/spiffygif_46x46.gif'> -->
+  <div class='message'></div>
 </div>
 
 
