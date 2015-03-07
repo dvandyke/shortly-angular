@@ -5,7 +5,15 @@ angular.module('shortly.links', [])
   $scope.data = {
     links: []
   };
-  //var links = $scope.data.links;
+
+  $scope.incrementVisits = function(link){
+    // on click
+    // increment $scope.data.visits
+    ++link.visits;
+    // profit!
+    // server sending time
+
+  };
 
 
   $scope.getLinks = function(){
