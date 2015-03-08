@@ -7,14 +7,10 @@ angular.module('shortly.shorten', [])
   };
 
   $scope.addLink = function (link) {
-    // run links.add link
-    // want to have a shortening method too or something?
     $scope.link.url = link;
 
-    Links.postLink($scope.link);
-
-    // redirect to links
-    // stuff .do
-    Links.linksRedirect();
+    Links.postLink($scope.link).then(function() {
+      Links.linksRedirect()
+    });
   }
 });

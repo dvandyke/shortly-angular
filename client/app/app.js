@@ -26,7 +26,10 @@ angular.module('shortly', [
     })
     .when('/logout', {
       templateUrl: 'app/auth/signin.html',
-      controller: 'Authcontroller'
+      controller: 'AuthController'
+    })
+    .otherwise({
+      redirectTo: '/links'
     })
 
     // We add our $httpInterceptor into the array
